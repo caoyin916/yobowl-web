@@ -29,7 +29,7 @@ The current site (yobowlcarrollton.com) is a standard Menufy/HungerRush ordering
 ### B. New & Rebuilt Pages
 - **Menu page (brand new).** The current site has **no menu page** on the marketing site at all — visitors must jump into the ordering app to see what's served. The new site has a dedicated, shareable Menu page showing the full menu and the new "Yo! Bowl Snacks" lineup.
 - **Catering page (rebuilt).** A proper catering hero, a description, the catering menu, and a clear "Contact Us" path for event inquiries.
-- **Location & Hours + Contact (rebuilt).** Now includes the address, click-to-call phone, **business hours AND separate carryout hours**, cuisine & atmosphere tags, an embedded Google Map, a **"where to park" storefront guide photo**, and a working contact form.
+- **Location & Hours + Contact (rebuilt).** Now includes the address, click-to-call phone, **business hours AND separate carryout hours**, cuisine & atmosphere tags, an embedded Google Map, a **"where to park" storefront guide photo**, and a **fully working contact form that emails the restaurant directly** — submissions are delivered to the owner's inbox (via Web3Forms, no backend or developer needed) and protected from spam by a hidden honeypot plus an **hCaptcha** "I'm human" check.
 - **Gallery (rebuilt & functional).** A real photo gallery with a private, password-protected upload tool so you can add dish photos yourself — no developer needed for day-to-day updates.
 
 ### C. SEO & Discoverability (mostly invisible, very important)

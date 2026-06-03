@@ -198,25 +198,36 @@
     <div id="contact" data-screen-label="Contact form">
       <p class="section-eyebrow">Get In Touch</p>
       <h2 style="font-size:30px">Contact Form</h2>
-      <form class="contact-form" onsubmit="event.preventDefault();alert('Thanks! This is a replica — the message was not sent.');">
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms: REQUIRED. Submissions are emailed to the address this
+             access key was created with (caoyin916@gmail.com). Paste your key
+             below — see HOW-TO comment at the bottom of this file. -->
+        <input type="hidden" name="access_key" value="4a7ad28c-5195-41e7-bc19-8630fa246746">
+        <input type="hidden" name="subject" value="New contact-form message — Yo Bowl Carrollton">
+        <input type="hidden" name="from_name" value="Yo Bowl Carrollton Website">
+        <!-- Spam honeypot: stays empty for humans, hidden from view. Do not remove. -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div>
           <label>Name <span class="req">*</span></label>
-          <input type="text" required>
+          <input type="text" name="name" required>
         </div>
         <div>
           <label>Email <span class="req">*</span></label>
-          <input type="email" required>
+          <input type="email" name="email" required>
         </div>
         <div>
           <label>Phone <span class="req">*</span></label>
-          <input type="tel" required>
+          <input type="tel" name="phone" required>
         </div>
         <div>
           <label>Message <span class="req">*</span></label>
-          <textarea required></textarea>
+          <textarea name="message" required></textarea>
         </div>
-        <label class="captcha"><input type="checkbox" required> I'm not a robot</label>
+        <!-- hCaptcha: real anti-spam check. The Web3Forms client script (loaded
+             at the bottom of this page) auto-fills the sitekey and the token. -->
+        <div class="h-captcha" data-captcha="true"></div>
         <button class="btn" type="submit">Submit</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </div>
@@ -264,6 +275,75 @@
   const n = document.getElementById('nav');
   t && t.addEventListener('click', () => n.classList.toggle('open'));
 </script>
+
+<!-- ===== Contact form → Web3Forms =====
+     The form above is emailed to caoyin916@gmail.com via Web3Forms (no backend
+     needed). To activate it:
+       1. Go to https://web3forms.com, enter caoyin916@gmail.com, and you'll be
+          emailed a free Access Key (a long UUID).
+       2. In the <form> above, replace REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY
+          with that key.
+       3. Submit the form once on the live site and confirm the email arrives
+          (check spam the first time).
+     To change the destination email later, create a new key with the new
+     address and swap it in. -->
+<script>
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const status = document.getElementById('formStatus');
+  const btn = form.querySelector('button[type="submit"]');
+  const PHONE = '(469) 892-6267';
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Require the hCaptcha "I'm human" check to be completed first.
+    const cap = form.querySelector('textarea[name="h-captcha-response"]');
+    if (!cap || !cap.value) {
+      status.hidden = false;
+      status.className = 'form-status err';
+      status.textContent = 'Please complete the “I’m human” check above, then click Submit.';
+      return;
+    }
+
+    const prevLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.hidden = false;
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success) {
+        status.className = 'form-status ok';
+        status.textContent = 'Thanks! Your message has been sent — we’ll be in touch soon.';
+        form.reset();
+      } else {
+        status.className = 'form-status err';
+        status.textContent = (json && json.message)
+          ? json.message
+          : 'Sorry, something went wrong. Please call us at ' + PHONE + '.';
+      }
+    } catch (err) {
+      status.className = 'form-status err';
+      status.textContent = 'Network error — please try again, or call us at ' + PHONE + '.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = prevLabel;
+    }
+  });
+})();
+</script>
+<!-- Web3Forms client script: renders the hCaptcha widget and injects its
+     sitekey + response token automatically. Required for the captcha above. -->
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script src="js/external-links.js?v=2"></script>
 </body>
 </html>

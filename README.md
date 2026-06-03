@@ -98,13 +98,40 @@ upload publishes for everyone automatically.
 
 ---
 
+## Contact form (Location & Hours page)
+
+The contact form on **Location.html** is live. When a visitor submits it, the
+message is emailed to **caoyin916@gmail.com** using
+[Web3Forms](https://web3forms.com) (a free form-to-email service — no server or
+database needed, which suits this static site). The visitor stays on the page
+and sees a green "Thanks! Your message has been sent" confirmation.
+
+The first time a message arrives, **check your spam folder** and mark it "Not
+spam" so future ones land in your inbox.
+
+### Spam protection
+The form is protected two ways:
+- a hidden "honeypot" trap that catches simple bots, and
+- an **hCaptcha** "I'm human" checkbox the visitor must complete before the
+  Submit button will work.
+
+### Changing the destination email
+Submissions go to whatever address the **Web3Forms Access Key** was created
+with. To send them somewhere else:
+1. Go to https://web3forms.com and create a new Access Key with the new email.
+2. Open `Location.html`, find the line with `name="access_key"` (near the top
+   of the contact `<form>`), and replace the key value with the new one.
+
+The current key is public by design — it only lets people *send* to your form,
+not read your submissions, so it's safe to keep in the page.
+
 ## Files
 
 | File | Purpose |
 |------|---------|
 | `index.html` | Home page |
 | `Gallery.html` | Photo gallery (with hidden admin upload) |
-| `Location.html` | Location, hours, map & contact form |
+| `Location.html` | Location, hours, map & working contact form (Web3Forms + hCaptcha) |
 | `Catering.html` | Catering page |
 | `css/styles.css` | Shared site styles |
 | `js/gallery.js` | Gallery upload, layout & admin logic |
