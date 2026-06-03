@@ -285,12 +285,6 @@ h1, h2, h3, h4 {
   text-shadow: 0 2px 16px rgba(0,0,0,.5);
 }
 .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.hero-scroll {
-  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
-  z-index: 2; color: rgba(255,255,255,.7); font-size: 22px;
-  animation: bob 2.2s ease-in-out infinite;
-}
-@keyframes bob { 0%,100%{ transform: translate(-50%,0);} 50%{ transform: translate(-50%,8px);} }
 
 /* ===== Sections ===== */
 section { padding: 96px 0; position: relative; z-index: 2; }
@@ -600,7 +594,6 @@ section { padding: 96px 0; position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-bg { animation: none; transform: scale(1.05); }
-  .hero-scroll { animation: none; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
   * { scroll-behavior: auto !important; }
 }
