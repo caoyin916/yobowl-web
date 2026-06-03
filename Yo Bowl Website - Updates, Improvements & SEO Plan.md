@@ -8,6 +8,7 @@
 
 - The current live site is a stock online-ordering template. The new site is a **purpose-built marketing website** designed to turn Google searches and curious visitors into orders.
 - We added a **real Menu page**, a **Catering page**, a redesigned **Location & Hours + Contact** page, a working **Gallery**, and a proper **homepage with a headline and story** — none of which exist (or are incomplete) on the current site.
+- We gave the site a **premium visual redesign** (the "Chili Oil & Porcelain" design system): a refined warm palette, frosted sticky navigation, polished buttons, and tasteful scroll animations — moving it from "stock ordering template" to "looks like a top design agency built it."
 - We built in **modern SEO foundations** (page titles, descriptions, Google "rich result" data, social-share previews, fast-loading images) that the current site is missing.
 - Below: (1) everything that changed, (2) the top 5 next improvements for more orders & better ranking, and (3) a hands-on SEO plan including a **10-point Google Business Profile checklist**.
 
@@ -21,7 +22,7 @@ The current site (yobowlcarrollton.com) is a standard Menufy/HungerRush ordering
 | Current site | New site |
 |---|---|
 | Logo only, no headline; clicking the logo sends you to the ordering app | Clear headline **"Authentic Chinese Comfort Food"** + tagline, with the logo linking back home as expected |
-| Generic template look | Custom visual identity — branded "YB" mark, warm appetizing color palette, professional typography (Montserrat + Open Sans) |
+| Generic template look | Custom, agency-grade visual identity — the **"Chili Oil & Porcelain"** design system: branded "YB" mark, a warm lacquer-red / chili-oil-amber + porcelain-cream palette, layered depth and subtle texture, and clean professional typography (Montserrat headings + Open Sans body). See section E for the full design breakdown. |
 | Empty "Grid Photo Gallery" heading with nothing under it | Removed; replaced with a real, working Gallery page |
 | Typo "DELISHIOUS" live on the page | Fixed and copy professionally rewritten |
 | One "Start Your Order" button | Clear, repeated **Order Online** calls-to-action plus a cart indicator in the header |
@@ -44,7 +45,17 @@ The current site (yobowlcarrollton.com) is a standard Menufy/HungerRush ordering
 - **Mobile-first responsive layout** with a proper hamburger menu.
 - **Accessibility & SEO basics:** descriptive `alt` text on images, labeled buttons, and semantic headings.
 
-> **Bottom line:** the current site is a functional ordering link with a thin storefront. The new site is a complete, fast, search-optimized restaurant website that still drives every visitor toward placing an order.
+### E. Visual Design & Interaction (premium redesign)
+Beyond the page-by-page rebuild, the new site was given a cohesive, agency-grade design system — internally called **"Chili Oil & Porcelain"** — that the stock template completely lacks:
+
+- **Refined brand palette:** warm porcelain-cream backgrounds, a deepened lacquer-red brand color with a chili-oil red→amber gradient on buttons and accents, ink-dark feature bands, and gold review stars — finished with layered shadows and a subtle paper-grain texture for depth.
+- **Polished navigation:** a translucent "frosted" sticky header that subtly shrinks and gains a shadow as you scroll, an animated gradient underline on links, and pill-shaped gradient "Order Online" buttons.
+- **Stronger hero:** the logo now sits on a clean porcelain "plate" so it stands out against the dark food photography; a refined gradient overlay, a gentle background zoom, and a single, focused **"Start Your Order"** call-to-action.
+- **Editorial content sections:** an offset-framed "fresh ingredients" feature, a hover-zoom Instagram grid, and redesigned customer-review cards with quotation styling and gold stars.
+- **Tasteful motion:** content gently fades and rises into view as you scroll, with hover lifts on cards and buttons. All motion is **disabled automatically for visitors who prefer reduced motion**, and every bit of content remains fully present without JavaScript — so SEO and accessibility are unaffected.
+- **Refined mobile experience:** a cleaner slide-in menu and touch-friendly controls.
+
+> **Bottom line:** the current site is a functional ordering link with a thin storefront. The new site is a complete, fast, search-optimized, and beautifully designed restaurant website that still drives every visitor toward placing an order.
 
 ---
 
@@ -112,4 +123,4 @@ Install Google Analytics 4 + Google Search Console, track "Order Online" clicks 
 ## Suggested next step
 Approve the new site to go live, then prioritize **#1 (real photos)** and **#3 (reviews)** from the roadmap, and run through the **GBP 10-point checklist** — those three together typically move the needle fastest on both orders and local ranking.
 
-*This document compares the new build against the current live site as of May 2026. The GBP section is a best-practice audit checklist, not a reading of the live profile.*
+*This document compares the new build (including the June 2026 "Chili Oil & Porcelain" visual redesign) against the current live site at yobowlcarrollton.com as of June 2026. The GBP section is a best-practice audit checklist, not a reading of the live profile.*
