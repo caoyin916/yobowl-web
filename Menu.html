@@ -25,6 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
 <link rel="stylesheet" href="css/styles.css">
 
 <!-- ===== Structured data: Menu (Schema.org JSON-LD) ===== -->
@@ -92,8 +93,8 @@
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 14px;
-    box-shadow: 0 14px 40px rgba(31,27,24,.12);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     border: 1px solid var(--line);
   }
   /* Snacks flyer is portrait — show it at 50% width, centered. */
@@ -127,6 +128,7 @@
 </header>
 
 <div class="page-head" data-screen-label="Menu page head">
+  <p class="section-eyebrow">Come Hungry</p>
   <h1>Build Yo! Own Bowl &amp; more</h1>
   <p>Come hungry — here's everything we're serving up.</p>
 </div>
@@ -134,14 +136,14 @@
 <section data-screen-label="Menu">
   <div class="wrap center">
     <div class="menu-board">
-      <figure class="menu-main">
+      <figure class="menu-main" data-reveal>
         <img src="menu-photo/main-menu.webp" alt="Yo Bowl Carrollton full menu — Build Yo! Own Bowl, signature bowls, appetizers, drinks and desserts" fetchpriority="high" decoding="async">
       </figure>
-      <figure class="menu-snacks">
+      <figure class="menu-snacks" data-reveal>
         <img src="menu-photo/snacks-menu.webp" alt="Yo Bowl Carrollton new Yo! Bowl Snacks menu" loading="lazy" decoding="async">
       </figure>
     </div>
-    <div class="center" style="margin-top:44px">
+    <div class="center" style="margin-top:44px" data-reveal>
       <a class="btn btn--lg" href="https://order.toasttab.com/online/yobowl" target="_blank" rel="noopener">Order Online</a>
     </div>
   </div>
@@ -182,6 +184,7 @@
   const n = document.getElementById('nav');
   t && t.addEventListener('click', () => n.classList.toggle('open'));
 </script>
+<script src="js/reveal.js?v=1"></script>
 <script src="js/external-links.js?v=2"></script>
 </body>
 </html>

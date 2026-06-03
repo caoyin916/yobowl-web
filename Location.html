@@ -27,6 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
 <link rel="stylesheet" href="css/styles.css">
 <style>
   .loc-photos { padding: 8px 0 56px; }
@@ -40,8 +41,8 @@
   .loc-photo-grid img {
     width: 100%;
     height: auto;
-    border-radius: 14px;
-    box-shadow: 0 14px 40px rgba(31,27,24,.14);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     border: 1px solid var(--line);
   }
   .loc-photo-grid figcaption {
@@ -64,8 +65,8 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 14px;
-    box-shadow: 0 14px 40px rgba(31,27,24,.14);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     border: 1px solid var(--line);
   }
 </style>
@@ -149,6 +150,7 @@
 </header>
 
 <div class="page-head" data-screen-label="Location page head">
+  <p class="section-eyebrow">Find Us</p>
   <h1>Location &amp; Hours</h1>
   <p>Find us, call us, or send a message — we'd love to hear from you.</p>
 </div>
@@ -156,7 +158,7 @@
 <section>
   <div class="wrap loc-grid">
     <!-- Left: info -->
-    <div data-screen-label="Location info">
+    <div data-screen-label="Location info" data-reveal>
       <h2 style="font-size:30px">Yo Bowl Carrollton</h2>
       <p style="color:var(--ink-soft)">Welcome to Yo Bowl Carrollton. We serve Chinese cuisine such as Braised Beef Mifen, Signature Dry Mifen, Fresh Yogurt and Dumplings. We are located on 2700 Old Denton Rd, near Young Sook Lee CPA. Order online for carryout today!</p>
 
@@ -195,7 +197,7 @@
     </div>
 
     <!-- Right: contact form -->
-    <div id="contact" data-screen-label="Contact form">
+    <div id="contact" data-screen-label="Contact form" data-reveal data-reveal-delay="120">
       <p class="section-eyebrow">Get In Touch</p>
       <h2 style="font-size:30px">Contact Form</h2>
       <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
@@ -233,9 +235,9 @@
   </div>
 
   <div class="wrap">
-    <iframe class="map-embed" title="Yo Bowl Carrollton map" loading="lazy" style="height:420px;margin-top:48px"
+    <iframe class="map-embed" title="Yo Bowl Carrollton map" loading="lazy" style="height:420px;margin-top:48px" data-reveal
       src="https://maps.google.com/maps?q=2700+Old+Denton+Rd+Unit+110+Carrollton+TX+75007&z=15&output=embed"></iframe>
-    <figure class="park-figure">
+    <figure class="park-figure" data-reveal>
       <img src="location-photo/where-to-park-storefront.png" alt="Yo Bowl Carrollton storefront at Unit 110 and a where-to-park guide showing map, street entrance, back entrance and parking entrance" width="1774" height="887" loading="lazy" decoding="async">
     </figure>
   </div>
@@ -344,6 +346,7 @@
 <!-- Web3Forms client script: renders the hCaptcha widget and injects its
      sitekey + response token automatically. Required for the captcha above. -->
 <script src="https://web3forms.com/client/script.js" async defer></script>
+<script src="js/reveal.js?v=1"></script>
 <script src="js/external-links.js?v=2"></script>
 </body>
 </html>

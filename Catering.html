@@ -27,6 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -57,6 +58,7 @@
 
 <section class="catering-hero" data-screen-label="Catering hero"
   style="background-image:linear-gradient(rgba(36,28,24,.78),rgba(36,28,24,.78)),url('https://static.hungerrush.com/menufy/width=1920,height=1080,fit=scale-down,format=auto/638542393542971002+1460800.png');background-size:cover;background-position:center;">
+  <p class="section-eyebrow">Catering</p>
   <h1>Let us cater your event!</h1>
   <p style="max-width:560px;margin:0 auto 28px;font-size:19px">From office lunches to family celebrations — bring the bold flavors of Yo Bowl to your next gathering.</p>
   <a class="btn btn--lg" href="Location.html#contact">Contact Us</a>
@@ -64,9 +66,9 @@
 
 <section data-screen-label="Catering menu">
   <div class="wrap center">
-    <p class="section-eyebrow">Catering Menu</p>
-    <h2 class="section-title">What we offer</h2>
-    <div class="catering-img">
+    <p class="section-eyebrow" data-reveal>Catering Menu</p>
+    <h2 class="section-title" data-reveal>What we offer</h2>
+    <div class="catering-img" data-reveal data-reveal-delay="120">
       <img src="https://static.hungerrush.com/menufy/width=1024,height=1024,fit=scale-down,format=auto/639087476474367676+1981351.png" alt="Yo Bowl Carrollton catering menu">
     </div>
   </div>
@@ -106,6 +108,7 @@
   const n = document.getElementById('nav');
   t && t.addEventListener('click', () => n.classList.toggle('open'));
 </script>
+<script src="js/reveal.js?v=1"></script>
 <script src="js/external-links.js?v=2"></script>
 </body>
 </html>
