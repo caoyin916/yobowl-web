@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "{{site.base_url}}/#restaurant",
+  "name": "{{restaurant.name}}",
+  "url": "{{site.base_url}}/{{page_file}}",
+  "image": "{{media.og_image}}",
+  "logo": "{{media.logo}}",
+  "description": "{{restaurant.description_plain}}",
+  "telephone": "{{contact.phone_e164}}",
+  "priceRange": "{{restaurant.price_range}}",
+  "servesCuisine": ["{{restaurant.cuisine_schema}}"],
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card",
+  "acceptsReservations": "False",
+  "menu": "{{site.base_url}}/Menu.html",
+  "hasMenu": { "@id": "{{site.base_url}}/#menu" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{contact.address_street}}",
+    "addressLocality": "{{contact.address_city}}",
+    "addressRegion": "{{contact.address_state}}",
+    "postalCode": "{{contact.address_zip}}",
+    "addressCountry": "{{contact.address_country}}"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{contact.coordinates_lat}},
+    "longitude": {{contact.coordinates_lng}}
+  },
+  "hasMap": "{{links.maps}}",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["{{hours.days_schema}}"],
+      "opens": "{{hours.schema_opens}}",
+      "closes": "{{hours.schema_closes}}"
+    }
+  ],
+  "potentialAction": {
+    "@type": "OrderAction",
+    "target": "{{links.order_online}}",
+    "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp"
+  },
+  "sameAs": [
+    "{{links.instagram}}"
+  ]
+}
+</script>

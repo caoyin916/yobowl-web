@@ -1,0 +1,70 @@
+{
+  "restaurant": {
+    "name": "Yo Bowl Carrollton",
+    "name_short": "Yo Bowl",
+    "initials": "YB",
+    "tagline": "Authentic Chinese Mifen & Dumplings",
+    "description": "Authentic Chinese comfort food in Carrollton, TX — Braised Beef Mifen, Signature Dry Mifen, Fresh Yogurt &amp; Dumplings, made fresh. Order online for carryout today!",
+    "description_plain": "Authentic Chinese comfort food in Carrollton, TX — Braised Beef Mifen, Signature Dry Mifen, Fresh Yogurt and Dumplings. Order online for carryout.",
+    "footer_description": "Authentic Chinese cuisine — Braised Beef Mifen, Signature Dry Mifen, Fresh Yogurt &amp; Dumplings.",
+    "cuisine_schema": "Chinese\", \"Asian\", \"Noodles",
+    "price_range": "$$",
+    "copyright_year": "2026"
+  },
+  "contact": {
+    "phone_display": "(469) 892-6267",
+    "phone_e164": "+1-469-892-6267",
+    "phone_tel": "+14698926267",
+    "address_street": "2700 Old Denton Rd Unit 110",
+    "address_street_display": "2700 Old Denton Rd, Unit 110",
+    "address_city": "Carrollton",
+    "address_state": "TX",
+    "address_zip": "75007",
+    "address_country": "US",
+    "address_landmark": "near Young Sook Lee CPA",
+    "address_full": "2700 Old Denton Rd Unit 110, Carrollton, TX 75007",
+    "coordinates_lat": "32.9898",
+    "coordinates_lng": "-96.9075"
+  },
+  "hours": {
+    "schema_opens": "11:00",
+    "schema_closes": "21:00",
+    "days_schema": "Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday",
+    "display": "11:00 AM – 9:00 PM",
+    "days_display": "Mon – Sun",
+    "carryout_display": "11:00 AM – 8:30 PM"
+  },
+  "site": {
+    "domain": "yobowlcarrollton.com",
+    "base_url": "https://www.yobowlcarrollton.com",
+    "web3forms_key": "4a7ad28c-5195-41e7-bc19-8630fa246746",
+    "google_review_url": "https://www.google.com/search?q=Yo+Bowl+Carrollton"
+  },
+  "links": {
+    "order_online": "https://order.toasttab.com/online/yobowl",
+    "instagram": "https://www.instagram.com/yobowl.carrollton/",
+    "instagram_handle": "@yobowl.carrollton",
+    "maps": "https://www.google.com/maps/search/?api=1&query=2700+Old+Denton+Rd+Unit+110+Carrollton+TX+75007",
+    "maps_embed": "https://maps.google.com/maps?q=2700+Old+Denton+Rd+Unit+110+Carrollton+TX+75007&z=15&output=embed"
+  },
+  "media": {
+    "hero_bg": "https://static.hungerrush.com/menufy/width=1920,height=1080,fit=scale-down,format=auto/638542393542971002+1460800.png",
+    "logo": "https://static.hungerrush.com/menufy/width=600,fit=contain,format=auto/638542393646839504+1460802.png",
+    "og_image": "https://static.hungerrush.com/menufy/width=1920,height=1080,fit=scale-down,format=auto/638542393542971002+1460800.png",
+    "ingredients_photo": "https://static.hungerrush.com/menufy/height=300,fit=crop,format=auto/638543203124129293+1461532.png",
+    "catering_menu": "https://static.hungerrush.com/menufy/width=1024,height=1024,fit=scale-down,format=auto/639087476474367676+1981351.png",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap"
+  },
+  "theme": {
+    "accent": "#be2f25",
+    "accent_dark": "#8c1c14",
+    "ember": "#e89033",
+    "gold": "#d6a437",
+    "chili_from": "#cf3622",
+    "cream": "#f8f2e8",
+    "cream_deep": "#f1e8d8",
+    "ink": "#211a15",
+    "font_head": "Montserrat",
+    "font_body": "Open Sans"
+  }
+}
