@@ -63,7 +63,7 @@ cd sites/<slug>/dist && python3 -m http.server 8080
 | `sites/<slug>/` | **Gitignored** per-restaurant working folder: `config.json` + asset dirs + `dist/` preview. Staging area before a restaurant graduates to its own deploy repo. |
 | `onboarding/<slug>/` | **Gitignored** hand-transcribed/import-tool draft configs (raw working notes before promoting to `sites/<slug>/`) |
 | `import_tool/` | Onboarding helper that drafts a new restaurant's `config.json` from its existing POS/ordering page — see `import_tool/README.md` for the full field reference and the `TODO_MANUAL:` convention for fields needing human input |
-| `examples/yobowl-carrollton/` | Real photos from the original Yo Bowl Carrollton site, kept purely as a size/format/aspect-ratio reference. Not referenced by any `config.json` or copied into `dist/`. |
+| `examples/yobowl-carrollton/` | A complete, filled-in example site (real `config.json` + real photos) for Yo Bowl Carrollton — demonstrates a finished `sites/<slug>/` and shows what's real vs. placeholder. Copy it to `sites/yobowl-carrollton/` and run `build.py --site yobowl-carrollton` to preview; not built from the repo root. |
 
 ## File map (`template/`)
 

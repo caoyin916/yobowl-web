@@ -172,8 +172,8 @@ For each `sites/<slug>/`, add a short `README.md` with a table of which
 `media.*` keys (and gallery/Instagram photos) point at real assets vs. the
 generic placeholders, where the real ones came from, and what's still needed
 before launch (web3forms key, real reviews, missing photos, etc.). See
-`sites/yobowl-carrollton/README.md` for the format — this is what tells your
-partner (or the client) exactly what's left to do for *that* restaurant.
+`examples/yobowl-carrollton/README.md` for the format — this is what tells
+your partner (or the client) exactly what's left to do for *that* restaurant.
 
 ## Adding a new platform adapter
 
