@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Location &amp; Hours | {{restaurant.name}}</title>
-<meta name="description" content="Visit {{restaurant.name}} at {{contact.address_full}}. Call {{contact.phone_display}}. Open daily {{hours.schema_opens}}–{{hours.schema_closes}}. Get directions, hours and contact info.">
+<meta name="description" content="Visit {{restaurant.name}} at {{contact.address_full}}. Call {{contact.phone_display}}. Hours: {{hours.display}}. Get directions, hours and contact info.">
 <link rel="canonical" href="{{site.base_url}}/Location.html">
 
 <!-- Open Graph / Facebook -->
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="{{site.base_url}}/Location.html">
 <meta property="og:title" content="Location &amp; Hours | {{restaurant.name}}">
-<meta property="og:description" content="{{contact.address_full}}. Open daily {{hours.display}}. Call {{contact.phone_display}} for carryout.">
+<meta property="og:description" content="{{contact.address_full}}. Hours: {{hours.display}}. Call {{contact.phone_display}} for carryout.">
 <meta property="og:image" content="{{media.og_image}}">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
@@ -22,7 +22,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Location &amp; Hours | {{restaurant.name}}">
-<meta name="twitter:description" content="{{contact.address_full}}. Open daily {{hours.display}}.">
+<meta name="twitter:description" content="{{contact.address_full}}. Hours: {{hours.display}}.">
 <meta name="twitter:image" content="{{media.og_image}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,9 +53,9 @@
 {{> nav}}
 
 <div class="page-head" data-screen-label="Location page head">
-  <p class="section-eyebrow">Find Us</p>
+  <p class="section-eyebrow">{{pages.location.eyebrow}}</p>
   <h1>Location &amp; Hours</h1>
-  <p>Find us, call us, or send a message — we'd love to hear from you.</p>
+  <p>{{pages.location.tagline}}</p>
 </div>
 
 <section>
@@ -63,19 +63,18 @@
     <!-- Left: info -->
     <div data-screen-label="Location info" data-reveal>
       <h2 style="font-size:30px">{{restaurant.name}}</h2>
-      <p style="color:var(--ink-soft)">Welcome to {{restaurant.name}}. We serve Chinese cuisine such as Braised Beef Mifen, Signature Dry Mifen, Fresh Yogurt and Dumplings. We are located on {{contact.address_street}}, {{contact.address_landmark}}. Order online for carryout today!</p>
+      <p style="color:var(--ink-soft)">{{pages.location.welcome_text}}</p>
 
       <div class="info-block">
         <h4>Cuisines</h4>
         <div class="tags">
-          <span class="tag">Asian</span><span class="tag">Chicken</span><span class="tag">Chinese</span>
-          <span class="tag">Dessert</span><span class="tag">Noodles</span><span class="tag">Seafood</span>
+          {{pages.location.cuisine_tags_html}}
         </div>
       </div>
 
       <div class="info-block">
         <h4>Atmosphere</h4>
-        <div class="tags"><span class="tag">Casual Dining</span></div>
+        <div class="tags"><span class="tag">{{pages.location.atmosphere}}</span></div>
       </div>
 
       <div class="info-block">
@@ -101,8 +100,8 @@
 
     <!-- Right: contact form -->
     <div id="contact" data-screen-label="Contact form" data-reveal data-reveal-delay="120">
-      <p class="section-eyebrow">Get In Touch</p>
-      <h2 style="font-size:30px">Contact Form</h2>
+      <p class="section-eyebrow">{{pages.location.contact_eyebrow}}</p>
+      <h2 style="font-size:30px">{{pages.location.contact_h2}}</h2>
       <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="{{site.web3forms_key}}">
         <input type="hidden" name="subject" value="New contact-form message — {{restaurant.name}}">
@@ -135,7 +134,7 @@
     <iframe class="map-embed" title="{{restaurant.name}} map" loading="lazy" style="height:420px;margin-top:48px" data-reveal
       src="{{links.maps_embed}}"></iframe>
     <figure class="park-figure" data-reveal>
-      <img src="location-photo/where-to-park-storefront.png" alt="{{restaurant.name}} storefront and parking guide" width="1774" height="887" loading="lazy" decoding="async">
+      <img src="{{media.location_storefront_image}}" alt="{{restaurant.name}} storefront and parking guide" width="1774" height="887" loading="lazy" decoding="async">
     </figure>
   </div>
 </section>

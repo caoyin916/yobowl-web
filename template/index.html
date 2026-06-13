@@ -45,8 +45,8 @@
       <img class="hero-logo" src="{{media.logo}}" alt="{{restaurant.name}}" decoding="async">
     </span>
     <p class="section-eyebrow">{{contact.address_city}}, {{contact.address_state}}</p>
-    <h1>Authentic Chinese <em>Comfort Food</em></h1>
-    <p>{{restaurant.name_short}}: The Most Authentic Chinese Cuisine in {{contact.address_city}}</p>
+    <h1>{{pages.home.hero_headline}}</h1>
+    <p>{{pages.home.hero_sub}}</p>
     <div class="hero-cta">
       <a class="btn btn--lg" href="{{links.order_online}}" target="_blank" rel="noopener">Start Your Order</a>
     </div>
@@ -60,53 +60,55 @@
       <img src="{{media.ingredients_photo}}" alt="Fresh ingredients at {{restaurant.name}}" loading="lazy" decoding="async">
     </div>
     <div>
-      <p class="section-eyebrow">Real Ingredients — Fresh &amp; Delicious</p>
-      <h2>Quality you can taste in every bowl</h2>
-      <p>At {{restaurant.name_short}}, we are committed to providing our customers with quality Chinese cuisine made from only the freshest and most authentic ingredients. Our dedication to using real ingredients ensures that every dish bursts with flavor and nutrition — for a truly satisfying dining experience. Come discover the difference that fresh, delicious, authentic Chinese cuisine can make.</p>
+      <p class="section-eyebrow">{{pages.home.ingredients_eyebrow}}</p>
+      <h2>{{pages.home.ingredients_h2}}</h2>
+      <p>{{pages.home.ingredients_body}}</p>
       <a class="btn btn--ghost" href="{{links.order_online}}" target="_blank" rel="noopener">Order Now →</a>
     </div>
   </div>
 </section>
 
+{{#if links.instagram}}
 <!-- ===== Instagram ===== -->
 <section class="band" data-screen-label="Instagram">
   <div class="wrap center">
-    <p class="section-eyebrow" data-reveal>Follow Along</p>
-    <h2 class="section-title" data-reveal>Follow us on Instagram</h2>
+    <p class="section-eyebrow" data-reveal>{{pages.home.instagram_eyebrow}}</p>
+    <h2 class="section-title" data-reveal>{{pages.home.instagram_headline}}</h2>
     <a class="ig-handle" href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal>📷 {{links.instagram_handle}}</a>
     <div class="photo-grid cols-3" style="margin-top:34px">
-      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal><img src="https://static.hungerrush.com/menufy/width=400,height=400,fit=crop,format=auto/638538083750069243+1457024.png" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
-      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="80"><img src="https://static.hungerrush.com/menufy/width=400,height=400,fit=crop,format=auto/638538083751269255+1457025.png" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
-      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="160"><img src="https://static.hungerrush.com/menufy/width=400,height=400,fit=crop,format=auto/638538083753269288+1457026.png" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
-      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="240"><img src="https://static.hungerrush.com/menufy/width=400,height=400,fit=crop,format=auto/638538083754369304+1457027.png" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
-      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="320"><img src="https://static.hungerrush.com/menufy/width=400,height=400,fit=crop,format=auto/638538083756969341+1457029.png" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
-      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="400"><img src="https://static.hungerrush.com/menufy/width=400,height=400,fit=crop,format=auto/638538083755569315+1457028.png" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
+      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal><img src="{{media.instagram_photos.0}}" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
+      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="80"><img src="{{media.instagram_photos.1}}" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
+      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="160"><img src="{{media.instagram_photos.2}}" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
+      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="240"><img src="{{media.instagram_photos.3}}" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
+      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="320"><img src="{{media.instagram_photos.4}}" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
+      <a href="{{links.instagram}}" target="_blank" rel="noopener" data-reveal data-reveal-delay="400"><img src="{{media.instagram_photos.5}}" alt="{{restaurant.name}} on Instagram" width="400" height="400" loading="lazy" decoding="async"></a>
     </div>
   </div>
 </section>
+{{/if}}
 
 <!-- ===== Reviews ===== -->
 <section class="reviews" data-screen-label="Reviews">
   <div class="wrap">
     <div class="center">
-      <p class="section-eyebrow" data-reveal>Reviews</p>
-      <h2 class="section-title" data-reveal>See What Customers are Saying</h2>
+      <p class="section-eyebrow" data-reveal>{{pages.home.reviews_eyebrow}}</p>
+      <h2 class="section-title" data-reveal>{{pages.home.reviews_h2}}</h2>
     </div>
     <div class="review-grid">
       <div class="review-card" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>I really enjoyed the taste of all the food here, especially the rice noodles, which reminded me of the ones from my hometown in Hunan. Highly recommended, will definitely come back! 👍👍👍👍</p>
-        <div class="review-author">— Xinjin Y.</div>
+        <div class="stars">{{reviews.0.stars}}</div>
+        <p>{{reviews.0.text}}</p>
+        <div class="review-author">{{reviews.0.author}}</div>
       </div>
       <div class="review-card" data-reveal data-reveal-delay="120">
-        <div class="stars">★★★★★</div>
-        <p>We tried this new restaurant and ordered beef Mifen soup, dried Mifen and a few appetizers. They all taste really good, and what I really like is you can customize your toppings. I highly recommend adding pickled beans, Thai chili, fried eggs. These definitely bring real spicy kicks and more flavor. Very clean and great service!</p>
-        <div class="review-author">— Sharon Z.</div>
+        <div class="stars">{{reviews.1.stars}}</div>
+        <p>{{reviews.1.text}}</p>
+        <div class="review-author">{{reviews.1.author}}</div>
       </div>
       <div class="review-card" data-reveal data-reveal-delay="240">
-        <div class="stars">★★★★★</div>
-        <p>I ordered the spicy braised beef mifen, spicy dry mifen noodle with fish, cucumber salad, and the wontons in chili oil. I really liked the flavors and texture of the noodles! The fresh yogurt and hibiscus tea were also great and refreshing with the spicy food!</p>
-        <div class="review-author">— Jef N.</div>
+        <div class="stars">{{reviews.2.stars}}</div>
+        <p>{{reviews.2.text}}</p>
+        <div class="review-author">{{reviews.2.author}}</div>
       </div>
     </div>
     <div class="center" style="margin-top:44px" data-reveal>

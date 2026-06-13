@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder image — Featured Dish #2">
+  <rect width="800" height="600" fill="#f8f2e8"/>
+  <rect x="16" y="16" width="768" height="568" fill="none" stroke="#be2f25" stroke-width="3" stroke-dasharray="14 10" rx="12"/>
+  <text x="50%" y="289.2" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="36" font-weight="700" fill="#be2f25">Featured Dish #2</text>
+  <text x="50%" y="332.4" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="20" fill="#1c1a17">Replace media.menu_image_2 in config.json</text>
+  <text x="50%" y="368.4" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="14" fill="#8a7f72">menu-photo/menu-image-2-placeholder.svg</text>
+</svg>

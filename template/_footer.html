@@ -13,14 +13,14 @@
       <a href="Menu.html">Menu</a>
       <a href="Gallery.html">Gallery</a>
       <a href="Location.html">Location &amp; Hours</a>
-      <a href="Catering.html">Catering</a>
+      {{#if restaurant.has_catering}}<a href="Catering.html">Catering</a>{{/if}}
       <a href="{{links.order_online}}" target="_blank" rel="noopener">Order Online</a>
     </div>
     <div>
       <h4>Visit Us</h4>
       <a href="{{links.maps}}" target="_blank" rel="noopener">{{contact.address_street_display}}<br>{{contact.address_city}}, {{contact.address_state}} {{contact.address_zip}}</a>
       <a href="tel:{{contact.phone_tel}}">{{contact.phone_display}}</a>
-      <p style="margin:10px 0 0">Open Daily · {{hours.display}}</p>
+      <p style="margin:10px 0 0">{{hours.display}}</p>
     </div>
   </div>
   <div class="wrap footer-bottom">

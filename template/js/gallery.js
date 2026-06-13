@@ -1,4 +1,4 @@
-/* ===== Yo Bowl Gallery =====
+/* ===== Restaurant Template Gallery =====
  *
  * HOW PUBLISHING WORKS (no backend / static hosting):
  *  - PUBLIC visitors always see the real image files inside the gallery-photo/
@@ -11,7 +11,8 @@
  *    on Hostinger, and then everyone sees the new gallery.
  */
 (function () {
-  const DB_NAME = 'yobowl-gallery';
+  const _CFG           = window.GALLERY_CONFIG || {};
+  const DB_NAME        = _CFG.dbName        || 'restaurant-gallery';
   const STORE = 'photos';
   let db;
   let loaded = [];         // [{id, url, w, h, file?}]  file=true => published folder photo
@@ -94,7 +95,7 @@
       const list = await res.json();
       if (!Array.isArray(list)) return [];
       const dims = await Promise.all(list.map((name, i) => new Promise((resolve) => {
-        const url = 'gallery-photo/' + name;
+        const url = name.startsWith('http') ? name : 'gallery-photo/' + name;
         const im = new Image();
         im.onload = () => resolve({ id: 'file-' + i, key: 'file:' + name, name, url, w: im.naturalWidth || 1, h: im.naturalHeight || 1, file: true });
         im.onerror = () => resolve(null);
@@ -109,7 +110,7 @@
      present in the saved order (e.g. brand-new uploads, or photos renamed
      after a publish) fall to the end in their natural order, so the order
      self-heals and never loses a photo. */
-  const ORDER_KEY = 'yobowl-gallery-order';
+  const ORDER_KEY      = _CFG.orderKey      || 'restaurant-gallery-order';
   function loadOrder() {
     try { const a = JSON.parse(localStorage.getItem(ORDER_KEY)); return Array.isArray(a) ? a : []; }
     catch (e) { return []; }
@@ -149,7 +150,7 @@
      Live photo records its key locally and simply leaves it out of the preview
      and the next publish bundle. Once the owner publishes, the regenerated
      photos.json no longer lists it, so it disappears for everyone. */
-  const REMOVED_KEY = 'yobowl-gallery-removed';
+  const REMOVED_KEY    = _CFG.removedKey    || 'restaurant-gallery-removed';
   function loadRemoved() {
     try { const a = JSON.parse(localStorage.getItem(REMOVED_KEY)); return Array.isArray(a) ? a : []; }
     catch (e) { return []; }
@@ -241,7 +242,7 @@
 
       const img = document.createElement('img');
       img.src = it.url;
-      img.alt = 'Yo Bowl Carrollton dish photo';
+      img.alt = _CFG.imgAlt || 'dish photo';
       img.loading = 'lazy';
       img.decoding = 'async';
       img.draggable = false; // let the figure own the drag, not the image
@@ -505,8 +506,8 @@
   /* ---------- Discreet owner-only admin ----------
      Unlock: visit Gallery.html#admin and enter the passcode.
      Stays unlocked in this browser (localStorage) until "Lock". */
-  const ADMIN_PASSCODE = 'yobowl';
-  const ADMIN_KEY = 'yobowl-gallery-admin';
+  const ADMIN_PASSCODE = _CFG.adminPasscode || 'admin';
+  const ADMIN_KEY      = _CFG.adminKey      || 'restaurant-gallery-admin';
 
   function applyAdmin(on) {
     adminOn = on;

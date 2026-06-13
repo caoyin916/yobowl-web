@@ -1,4 +1,4 @@
-/* ===== Yo Bowl — robust external links =====
+/* ===== Restaurant template — robust external links =====
    Opens off-site links (Google Maps, review page, Instagram, online ordering)
    in a real new browser tab.
 

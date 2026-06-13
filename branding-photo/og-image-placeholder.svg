@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Placeholder image — Social Share Image">
+  <rect width="1200" height="630" fill="#f8f2e8"/>
+  <rect x="16" y="16" width="1168" height="598" fill="none" stroke="#be2f25" stroke-width="3" stroke-dasharray="14 10" rx="12"/>
+  <text x="50%" y="303.0" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" fill="#be2f25">Social Share Image</text>
+  <text x="50%" y="351.0" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="22" fill="#1c1a17">Replace media.og_image — use a real JPG/PNG (social platforms don't render SVG previews)</text>
+  <text x="50%" y="390.6" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="16" fill="#8a7f72">branding-photo/og-image-placeholder.svg</text>
+</svg>

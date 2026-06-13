@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Placeholder image — Hero Background">
+  <rect width="1600" height="900" fill="#f8f2e8"/>
+  <rect x="16" y="16" width="1568" height="868" fill="none" stroke="#be2f25" stroke-width="3" stroke-dasharray="14 10" rx="12"/>
+  <text x="50%" y="438.0" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" fill="#be2f25">Hero Background</text>
+  <text x="50%" y="486.0" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="22" fill="#1c1a17">Replace media.hero_bg in config.json with your homepage hero photo</text>
+  <text x="50%" y="525.6" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="16" fill="#8a7f72">branding-photo/hero-bg-placeholder.svg</text>
+</svg>

@@ -1,4 +1,4 @@
-/* Yo Bowl — progressive enhancement: header scroll-state, scroll reveals,
+/* Restaurant template — progressive enhancement: header scroll-state, scroll reveals,
    and a subtle hero parallax. All motion respects prefers-reduced-motion.
    This script never hides content unless JS is running (the CSS that hides
    [data-reveal] is scoped under html.js, set in each page's <head>). */

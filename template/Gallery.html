@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gallery | {{restaurant.name}} — Photos of Our Dishes</title>
-<meta name="description" content="See photos of {{restaurant.name}}'s dishes — Braised Beef Mifen, Signature Dry Mifen, dumplings, fresh yogurt and more. Authentic Chinese comfort food in {{contact.address_city}}, {{contact.address_state}}.">
+<meta name="description" content="{{pages.gallery.meta_description}}">
 <link rel="canonical" href="{{site.base_url}}/Gallery.html">
 
 <!-- Open Graph / Facebook -->
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="{{site.base_url}}/Gallery.html">
 <meta property="og:title" content="Gallery | {{restaurant.name}} — Photos of Our Dishes">
-<meta property="og:description" content="Photos of {{restaurant.name}}'s dishes — Mifen bowls, dumplings, fresh yogurt and more.">
+<meta property="og:description" content="{{pages.gallery.og_description}}">
 <meta property="og:image" content="{{media.og_image}}">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
@@ -22,7 +22,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gallery | {{restaurant.name}}">
-<meta name="twitter:description" content="Photos of {{restaurant.name}}'s dishes — Mifen bowls, dumplings, fresh yogurt and more.">
+<meta name="twitter:description" content="{{pages.gallery.og_description}}">
 <meta name="twitter:image" content="{{media.og_image}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +71,7 @@
 {{> nav}}
 
 <div class="page-head" data-screen-label="Gallery page head">
-  <p class="section-eyebrow">Our Kitchen</p>
+  <p class="section-eyebrow">{{pages.gallery.eyebrow}}</p>
   <h1>Gallery</h1>
   <p>A look at the dishes we serve at {{restaurant.name}}.</p>
 </div>
@@ -106,6 +106,16 @@
   </div>
 </section>
 
+<script>
+window.GALLERY_CONFIG = {
+  dbName:        '{{gallery_admin.site_key}}-gallery',
+  orderKey:      '{{gallery_admin.site_key}}-gallery-order',
+  removedKey:    '{{gallery_admin.site_key}}-gallery-removed',
+  adminKey:      '{{gallery_admin.site_key}}-gallery-admin',
+  adminPasscode: '{{gallery_admin.passcode}}',
+  imgAlt:        '{{restaurant.name}} dish photo'
+};
+</script>
 <script src="js/gallery.js?v=6"></script>
 {{> footer}}
 </body>

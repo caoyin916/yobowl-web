@@ -13,7 +13,7 @@
   "servesCuisine": ["{{restaurant.cuisine_schema}}"],
   "currenciesAccepted": "USD",
   "paymentAccepted": "Cash, Credit Card",
-  "acceptsReservations": "False",
+  "acceptsReservations": "{{restaurant.accepts_reservations}}",
   "menu": "{{site.base_url}}/Menu.html",
   "hasMenu": { "@id": "{{site.base_url}}/#menu" },
   "address": {
@@ -43,8 +43,8 @@
     "target": "{{links.order_online}}",
     "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp"
   },
-  "sameAs": [
-    "{{links.instagram}}"
+  "sameAs": [{{#if links.instagram}}
+    "{{links.instagram}}"{{/if}}
   ]
 }
 </script>

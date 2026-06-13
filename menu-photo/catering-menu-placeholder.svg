@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 1100" width="850" height="1100" role="img" aria-label="Placeholder image — Catering Menu">
+  <rect width="850" height="1100" fill="#f8f2e8"/>
+  <rect x="16" y="16" width="818" height="1068" fill="none" stroke="#be2f25" stroke-width="3" stroke-dasharray="14 10" rx="12"/>
+  <text x="50%" y="538.6" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="38" font-weight="700" fill="#be2f25">Catering Menu</text>
+  <text x="50%" y="584.2" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="21" fill="#1c1a17">Replace media.catering_menu in config.json with your catering menu PDF/image</text>
+  <text x="50%" y="622.0" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="15" fill="#8a7f72">menu-photo/catering-menu-placeholder.svg</text>
+</svg>
