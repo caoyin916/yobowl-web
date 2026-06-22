@@ -11,7 +11,42 @@ Pages included: **Home · Menu · Gallery · Location & Contact · Catering**
 
 ## Onboarding a new restaurant
 
-### Step 1 — Gather this information from the restaurant
+### Step 0 — What to ask the restaurant owner
+
+Send this list to the owner — everything here is needed before we can build the site.
+
+**Basic info**
+- Restaurant name (the full name, plus a shorter version if you use one — e.g. "Yo Bowl Carrollton" and "Yo Bowl")
+- One-line tagline or slogan
+- 1–2 sentence description of the restaurant (what kind of food, where, what makes it special)
+- Cuisine type(s) — e.g. Korean, Chinese, Vietnamese
+- Price range — $, $$, or $$$
+- Do you offer catering? Yes or no
+
+**Contact & location**
+- Phone number
+- Full address (street, city, state, zip)
+- Business hours — days open and open/close times (mention if takeout/carryout hours are different)
+
+**Online presence**
+- Link to your current online ordering page (if you have one — DoorDash, Chowbus, HungerRush, Toast, etc.)
+- Instagram profile link (or just your @handle) — leave this out if you don't have one
+- Your website domain name, if you already own one (e.g. `myrestaurant.com`)
+
+**Photos** — these make or break the site, so the more the better
+- Logo (ideally a transparent PNG, but any version works to start)
+- Hero/banner photo — a wide, high-quality shot of your food, interior, or storefront
+- 2–3 dish photos for the menu page
+- A photo of your storefront or a parking-guide shot for the location page
+- 3–6 food photos for the gallery
+
+**Reviews**
+- 3 real customer reviews — the quote and who said it (e.g. "— Google reviewer" or a first name)
+
+**Email for contact form**
+- The email address where you want customers' messages sent when they fill out the contact form on the site
+
+### Step 1 — Derive this information internally
 
 | Category | What you need |
 |---|---|
