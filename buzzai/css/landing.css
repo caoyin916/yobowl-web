@@ -244,8 +244,9 @@
 }
 .bz-site-link { font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--accent); white-space: nowrap; }
 .bz-site-card:hover .bz-site-link { color: var(--accent-dark); }
+.bz-sites-grid--single { grid-template-columns: 360px; justify-content: center; }
 @media (max-width: 860px) { .bz-sites-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .bz-sites-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .bz-sites-grid { grid-template-columns: 1fr; } .bz-sites-grid--single { grid-template-columns: 1fr; } }
 
 /* ---------- How It Works ---------- */
 .bz-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 56px; position: relative; }
