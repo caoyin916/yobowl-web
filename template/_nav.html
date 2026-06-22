@@ -1,0 +1,32 @@
+<header class="site-header" data-screen-label="Header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">{{restaurant.initials}}</span>
+      <span class="brand-name">{{restaurant.name_short}}<small>{{contact.address_city}}</small></span>
+    </a>
+    <nav class="main-nav" id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Location.html">Location &amp; Hours</a></li>
+        {{#if restaurant.has_catering}}<li><a href="Catering.html">Catering</a></li>{{/if}}
+        <li><a href="Location.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="cart-link" href="{{links.order_online}}" target="_blank" rel="noopener">
+        🛒 <span class="cart-badge">0</span> <span class="label">items</span>
+      </a>
+      <a class="btn" href="{{links.order_online}}" target="_blank" rel="noopener">Order Online</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<script>
+(function(){
+  var links = document.querySelectorAll('.main-nav a');
+  var path = location.pathname.split('/').pop() || 'index.html';
+  links.forEach(function(a){ if(a.getAttribute('href')===path) a.classList.add('active'); });
+})();
+</script>

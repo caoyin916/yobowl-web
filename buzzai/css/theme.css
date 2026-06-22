@@ -1,0 +1,26 @@
+/* ===== Buzz-AI brand theme =====
+   Overrides the "Chili Oil & Porcelain" tokens from
+   ../../template/css/styles.css with a SaaS-style indigo/violet + amber
+   palette for the Buzz-AI marketing site. Typography, radius, and shadow
+   shapes are intentionally left untouched so the shared component styles
+   (buttons, cards, feature bands, etc.) keep working as-is. */
+:root {
+  /* Ink / neutrals */
+  --ink: #181A2A;
+  --ink-soft: #565B72;
+  --ink-mute: #9498AC;
+  --cream: #F6F7FB;       /* page background */
+  --cream-deep: #ECEEF6;
+  --paper: #ffffff;
+  --line: #E3E6F0;
+
+  /* Brand — AI violet + buzz amber */
+  --accent: #6D5EF6;
+  --accent-dark: #5446D9;
+  --ember: #FF9F40;
+  --gold: #FF9F40;
+  --chili-oil: linear-gradient(125deg, #6D5EF6 0%, #9D7CF9 45%, #FF9F40 100%);
+  --ink-grad: linear-gradient(160deg, #20223A 0%, #12131C 100%);
+
+  --shadow-accent: 0 14px 32px rgba(109,94,246,.28);
+}

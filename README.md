@@ -1,137 +1,204 @@
-# Yo Bowl Carrollton — Website
+# Restaurant Website Template
 
-A multi-page replica/redesign of the Yo Bowl Carrollton restaurant site
-(Home, Gallery, Location & Hours, Contact, Catering).
+A reusable static-site pipeline that builds a complete restaurant website from
+a single `config.json`. One shared `template/` of HTML/CSS/JS, one Python
+build script, one config file per restaurant — no framework, no npm.
 
----
-
-## How to add photos to the Gallery
-
-The Gallery upload controls are **hidden from the public**. Only you can see
-them, after unlocking admin mode.
-
-### Step 1 — Open admin mode
-The easiest way: scroll to the very bottom of **any** page and click the small
-**"Owner login"** link in the footer. (It's intentionally subtle so customers
-don't notice it.)
-
-Alternatively, go to the Gallery page with `#admin` on the end of the URL:
-
-```
-Gallery.html#admin
-```
-
-(On the live site this is `https://your-domain.com/Gallery.html#admin`.)
-
-### Step 2 — Enter the passcode
-A prompt appears. Enter the passcode:
-
-```
-yobowl
-```
-
-If correct, the upload controls appear. Your browser stays unlocked from then
-on, so you won't be asked again on this device.
-
-### Step 3 — Upload your photos
-Click **↑ Upload Photos** and select one or more image files from your
-computer (you can select several at once), **or** drag-and-drop image files
-onto the drop zone that appears.
-
-- Each photo is added to its own full-width row, stacked below the previous
-  one, in the order you upload them.
-- Photos keep their natural shape (no cropping) — portrait or landscape both
-  work.
-- A running count ("3 photos") is shown next to the button.
-
-### Removing photos
-- **Remove one:** hover over a photo and click the **✕** in its top-right corner.
-- **Remove all:** click **Clear all**.
-
-### Hiding the controls again
-Click **Lock** to hide the upload controls. The public never sees them; this
-just re-locks your own browser. To get back in, repeat Steps 1–2.
+Pages included: **Home · Menu · Gallery · Location & Contact · Catering**
+(Catering is optional — disabled via `config.json`).
 
 ---
 
-## ⚠️ Important: two different ways photos get published
+## Onboarding a new restaurant
 
-There are **two** sets of gallery photos, and they behave very differently:
+### Step 1 — Gather this information from the restaurant
 
-1. **Photos everyone sees (the real site gallery).** These are actual image
-   files stored in the `gallery-photo/` folder and listed in
-   `gallery-photo/photos.json`. Every visitor sees these. To publish photos for
-   the public, the image files must be added to that folder on the live server
-   (your developer/host does this, or ask us to set it up).
+| Category | What you need |
+|---|---|
+| **Identity** | Restaurant name (full and short form), initials (2–3 letters), tagline, 1–2 sentence description, cuisine type(s), price range ($ / $$ / $$$) |
+| **Contact** | Phone number, full street address (with city / state / zip), GPS coordinates (lat/lng for the map pin) |
+| **Hours** | Opening and closing time, days of the week open, carryout-specific hours if different |
+| **Online ordering** | URL of the restaurant's existing ordering page (HungerRush, Toast, Chowbus, etc.) |
+| **Social** | Instagram profile URL and handle (leave blank to hide the Instagram section) |
+| **Reviews** | 3 real customer quotes (text + author label) |
+| **Domain** | The restaurant's domain name and full `https://www.` base URL |
+| **Google** | Google Maps link + embed URL, Google Business "leave a review" URL |
 
-2. **Photos only YOU see (the in-browser admin uploads).** When you use the
-   hidden **↑ Upload Photos** tool, those photos are saved **only in the
-   browser you uploaded them from** — they are a private preview on your own
-   laptop/phone and are **NOT visible to the public** and **NOT** on any other
-   device. This is useful for previewing how photos will look, but it does not
-   publish them to visitors.
+### Step 2 — Run the import tool (optional but saves time)
 
-**So:** uploading through the admin tool will *not* make a photo appear for
-customers. For that, the image file needs to live in `gallery-photo/` on the
-live site. Reach out and we can wire up a proper backend so the admin
-upload publishes for everyone automatically.
+The import tool can auto-draft most of `config.json` from the restaurant's
+existing POS/ordering page:
 
-## Notes
+```bash
+python3 -m import_tool.cli import \
+  --url "https://<their-ordering-page>" \
+  --slug <restaurant-slug>
+```
 
-- **Where in-browser uploads are stored:** the admin tool saves photos in *your
-  browser's* local storage (IndexedDB). They persist across refreshes on the
-  same browser and device, but they are **not** uploaded to a public server —
-  see the warning above.
+This writes a draft to `onboarding/<slug>/config.json`. Run
+`grep -n TODO_MANUAL onboarding/<slug>/config.json` to see every field that
+still needs a human answer. See `import_tool/README.md` for the full
+import workflow, including how to re-run safely after menu changes.
 
-- **Changing the passcode:** open `js/gallery.js` and edit this line near the
-  bottom:
+### Step 3 — Fill in photos
 
-  ```js
-  const ADMIN_PASSCODE = 'yobowl';
-  ```
+Place photos in `sites/<slug>/` under the appropriate asset directory:
 
-  Replace `'yobowl'` with your chosen passcode and save.
+| Directory | What goes here | Key `config.json` field(s) | Recommended size |
+|---|---|---|---|
+| `branding-photo/` | Hero background, logo, OG/social-share image, "fresh ingredients" photo | `media.hero_bg`, `media.logo`, `media.og_image`, `media.ingredients_photo` | `hero_bg` ~1600×900 · `logo` transparent PNG · **`og_image` must be JPG/PNG ≥ 1200×630** (social platforms don't render SVG) |
+| `menu-photo/` | Featured dish photos and catering menu image | `media.menu_image_1`, `media.menu_image_2`, `media.catering_menu` | JPG/WebP ~800×600 |
+| `location-photo/` | Storefront or parking-guide photo | `media.location_storefront_image` | JPG/WebP ~1200×800 |
+| `gallery-photo/` | Public photo gallery images + `photos.json` manifest | listed in `gallery-photo/photos.json` | JPG/WebP ~1000×750 |
 
-- **Security level:** this gate hides the controls from casual visitors, which
-  is the right level for a restaurant gallery. It is not bank-grade security —
-  true authentication would live in a backend on the live site.
+**Tip:** check the restaurant's existing ordering page first — most platforms
+(HungerRush, Menufy, Toast, Chowbus) host the restaurant's own logo and hero
+banner on their CDN. Grab them from the page's `<meta og:image>` or hero
+`<img>` source before going hunting for new photos.
+
+### Step 4 — Build and preview
+
+```bash
+python3 build.py --site <slug>
+cd sites/<slug>/dist && python3 -m http.server 8080
+# open http://localhost:8080
+```
 
 ---
 
-## Contact form (Location & Hours page)
+## `config.json` field reference
 
-The contact form on **Location.html** is live. When a visitor submits it, the
-message is emailed to **caoyin916@gmail.com** using
-[Web3Forms](https://web3forms.com) (a free form-to-email service — no server or
-database needed, which suits this static site). The visitor stays on the page
-and sees a green "Thanks! Your message has been sent" confirmation.
+Every field in `config.json` maps to a `{{key}}` placeholder in `template/`.
+The root `config.json` is a generic skeleton with placeholder values — copy it
+into `sites/<slug>/config.json` and fill it in.
 
-The first time a message arrives, **check your spam folder** and mark it "Not
-spam" so future ones land in your inbox.
+### `restaurant.*`
 
-### Spam protection
-The form is protected two ways:
-- a hidden "honeypot" trap that catches simple bots, and
-- an **hCaptcha** "I'm human" checkbox the visitor must complete before the
-  Submit button will work.
+| Key | Used for |
+|---|---|
+| `name` | Full restaurant name — appears in page titles, JSON-LD, headings |
+| `name_short` | Shorter form used inline (e.g. "At {{name_short}}, we…") |
+| `initials` | 2–3 letter monogram shown in the brand mark (nav/footer) |
+| `tagline` | Short one-liner — subtitle on the hero |
+| `description` | ~2 sentences, SEO meta description and JSON-LD |
+| `description_plain` | Plain-text version (no HTML) for JSON-LD `description` |
+| `footer_description` | Short blurb under the logo in the footer |
+| `cuisine_schema` | Raw string injected into JSON-LD `servesCuisine`, e.g. `"Chinese", "Asian"` |
+| `price_range` | `$` / `$$` / `$$$` — JSON-LD `priceRange` |
+| `copyright_year` | Year shown in the footer copyright line |
+| `accepts_reservations` | `"True"` or `"False"` — JSON-LD |
+| `has_catering` | `"True"` or `"False"` — set `"False"` to drop `Catering.html` and all nav/footer links to it |
 
-### Changing the destination email
-Submissions go to whatever address the **Web3Forms Access Key** was created
-with. To send them somewhere else:
-1. Go to https://web3forms.com and create a new Access Key with the new email.
-2. Open `Location.html`, find the line with `name="access_key"` (near the top
-   of the contact `<form>`), and replace the key value with the new one.
+### `contact.*`
 
-The current key is public by design — it only lets people *send* to your form,
-not read your submissions, so it's safe to keep in the page.
+| Key | Used for |
+|---|---|
+| `phone_display` | Human-readable phone, e.g. `(972) 555-1234` |
+| `phone_e164` | E.164 format, e.g. `+1-972-555-1234` — JSON-LD |
+| `phone_tel` | `tel:` link value, e.g. `+19725551234` |
+| `address_street` | Street address |
+| `address_street_display` | Street address as shown to visitors (can include Suite/Ste) |
+| `address_full` | Full one-line address — shown on Location page |
+| `address_city`, `address_state`, `address_zip`, `address_country` | Address components for JSON-LD |
+| `address_landmark` | Optional landmark text (e.g. "next to H-Mart") |
+| `coordinates_lat`, `coordinates_lng` | GPS decimal coordinates for JSON-LD `geo` |
 
-## Files
+### `hours.*`
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Home page |
-| `Gallery.html` | Photo gallery (with hidden admin upload) |
-| `Location.html` | Location, hours, map & working contact form (Web3Forms + hCaptcha) |
-| `Catering.html` | Catering page |
-| `css/styles.css` | Shared site styles |
-| `js/gallery.js` | Gallery upload, layout & admin logic |
+| Key | Used for |
+|---|---|
+| `schema_opens`, `schema_closes` | Opening/closing time in `HH:MM` for JSON-LD `OpeningHoursSpecification` |
+| `days_schema` | Raw `"Monday", "Tuesday", …` string for JSON-LD `dayOfWeek` |
+| `display` | Human-readable hours line, e.g. `Mon–Sun 11AM–9PM` |
+| `days_display` | Days-only summary, e.g. `Mon – Sun` |
+| `carryout_display` | Carryout-specific hours if they differ from dine-in |
+
+### `site.*`
+
+| Key | Used for |
+|---|---|
+| `domain` | Bare domain, e.g. `yourrestaurant.com` |
+| `base_url` | Full canonical URL, e.g. `https://www.yourrestaurant.com` |
+| `web3forms_key` | Web3Forms access key — routes the Location-page contact form submissions to the restaurant's email. Generate one at web3forms.com |
+| `google_review_url` | "Leave a review" link on the Location page |
+
+### `links.*`
+
+| Key | Used for |
+|---|---|
+| `order_online` | Online-ordering URL — nav CTA and JSON-LD `potentialAction` |
+| `instagram` | Instagram profile URL — leave empty to hide the Instagram section entirely |
+| `instagram_handle` | Handle without `@` — shown as `@handle` in the section |
+| `maps` | Google Maps link — "Get Directions" button |
+| `maps_embed` | Google Maps embed URL for the iframe on the Location page |
+
+### `media.*`
+
+| Key | File location | Used for |
+|---|---|---|
+| `hero_bg` | `branding-photo/` | Hero background image (full-width) |
+| `logo` | `branding-photo/` | Logo shown in the hero "logo plate" |
+| `og_image` | `branding-photo/` | Social-share preview image (must be JPG/PNG ≥ 1200×630) |
+| `ingredients_photo` | `branding-photo/` | Photo in the "fresh ingredients" feature section |
+| `menu_image_1` | `menu-photo/` | First featured menu/dish photo on the Menu page |
+| `menu_image_2` | `menu-photo/` | Second featured menu/dish photo |
+| `catering_menu` | `menu-photo/` | Catering menu image or PDF shown on the Catering page |
+| `location_storefront_image` | `location-photo/` | Storefront or parking-guide photo on the Location page |
+| `instagram_photos` | URLs | Array of 6 Instagram feed-photo URLs shown in the Instagram section |
+| `google_fonts_url` | — | Google Fonts stylesheet URL (change to swap fonts) |
+
+### `pages.*`
+
+Heading and copy overrides per page:
+
+| Section | Keys |
+|---|---|
+| `pages.home` | `hero_headline`, `hero_sub`, `ingredients_eyebrow`, `ingredients_h2`, `ingredients_body`, `instagram_eyebrow`, `instagram_headline`, `reviews_eyebrow`, `reviews_h2` |
+| `pages.menu` | `eyebrow`, `subtitle`, `h1`, `tagline`, `meta_description`, `og_description` |
+| `pages.gallery` | `eyebrow`, `meta_description`, `og_description` |
+| `pages.location` | `eyebrow`, `tagline`, `welcome_text`, `contact_eyebrow`, `contact_h2`, `cuisine_tags`, `atmosphere` |
+| `pages.catering` | `h1`, `offer_h2`, `meta_description`, `og_description` |
+
+### `gallery_admin.*`
+
+| Key | Used for |
+|---|---|
+| `site_key` | IndexedDB namespace for the admin photo-upload preview (unique per site) |
+| `passcode` | Passcode to unlock admin mode at `Gallery.html#admin` — set a real passcode, not the default `"admin"` |
+
+### `reviews[]`
+
+Array of 3 objects, each with `stars`, `text`, and `author`. These are the
+homepage review cards — use real customer quotes.
+
+### `theme.*`
+
+CSS custom-property values that set the site's color palette:
+
+| Key | Default | Controls |
+|---|---|---|
+| `accent` | `#be2f25` | Primary brand color (buttons, highlights) |
+| `accent_dark` | `#8c1c14` | Darker shade of accent (hover states) |
+| `ember` | `#e89033` | Secondary warm color (eyebrow labels) |
+| `gold` | `#d6a437` | Accent-2 (star ratings, subtle highlights) |
+| `chili_from` | `#cf3622` | Gradient start color |
+| `cream` | `#f8f2e8` | Page background |
+| `cream_deep` | `#f1e8d8` | Slightly darker background for alternating bands |
+| `ink` | `#211a15` | Body text color |
+| `font_head` | `Montserrat` | Heading / UI font (Google Fonts) |
+| `font_body` | `Open Sans` | Body text font (Google Fonts) |
+
+---
+
+## Repo layout
+
+| Path | Purpose |
+|---|---|
+| `template/` | Shared HTML/CSS/JS — every restaurant site is built from this |
+| `config.json` | Generic skeleton / field reference (placeholder values) |
+| `build.py` | Render pipeline: `template/` + `config.json` → `dist/` |
+| `sites/<slug>/` | Per-restaurant working folder (gitignored) — `config.json` + asset dirs + `dist/` preview |
+| `examples/` | Complete, filled-in example sites (real config + real photos) |
+| `onboarding/<slug>/` | Import-tool draft output (gitignored) — scratch space before promoting to `sites/<slug>/` |
+| `import_tool/` | Onboarding helper — drafts `config.json` from a restaurant's existing ordering page |
+| `buzzai/` | Buzz-AI company marketing/landing page (separate from the restaurant pipeline) |

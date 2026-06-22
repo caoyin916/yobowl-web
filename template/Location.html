@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Location &amp; Hours | {{restaurant.name}}</title>
+<meta name="description" content="Visit {{restaurant.name}} at {{contact.address_full}}. Call {{contact.phone_display}}. Hours: {{hours.display}}. Get directions, hours and contact info.">
+<link rel="canonical" href="{{site.base_url}}/Location.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="{{restaurant.name}}">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="{{site.base_url}}/Location.html">
+<meta property="og:title" content="Location &amp; Hours | {{restaurant.name}}">
+<meta property="og:description" content="{{contact.address_full}}. Hours: {{hours.display}}. Call {{contact.phone_display}} for carryout.">
+<meta property="og:image" content="{{media.og_image}}">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="{{restaurant.name}}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Location &amp; Hours | {{restaurant.name}}">
+<meta name="twitter:description" content="{{contact.address_full}}. Hours: {{hours.display}}.">
+<meta name="twitter:image" content="{{media.og_image}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{media.google_fonts_url}}" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="css/theme.css">
+<style>
+  .loc-photos { padding: 8px 0 56px; }
+  .loc-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+  .loc-photo-grid figure { margin: 0; }
+  .loc-photo-grid img { width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--line); }
+  .loc-photo-grid figcaption { margin-top: 12px; color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
+  @media (max-width: 640px) { .loc-photo-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .park-figure { margin: 32px 0 0; }
+  .loc-grid { align-items: stretch; }
+  .loc-grid > [data-screen-label="Location info"] { display: flex; flex-direction: column; justify-content: space-between; }
+  .loc-grid > [data-screen-label="Location info"] > p { margin-bottom: 6px; }
+  .loc-grid > [data-screen-label="Location info"] .info-block { margin-bottom: 14px; }
+  .loc-grid > [data-screen-label="Location info"] .info-block:last-child { margin-bottom: 0; }
+  .park-figure img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--line); }
+</style>
+
+{{> schema_restaurant page_file="Location.html"}}
+</head>
+<body>
+
+{{> nav}}
+
+<div class="page-head" data-screen-label="Location page head">
+  <p class="section-eyebrow">{{pages.location.eyebrow}}</p>
+  <h1>Location &amp; Hours</h1>
+  <p>{{pages.location.tagline}}</p>
+</div>
+
+<section>
+  <div class="wrap loc-grid">
+    <!-- Left: info -->
+    <div data-screen-label="Location info" data-reveal>
+      <h2 style="font-size:30px">{{restaurant.name}}</h2>
+      <p style="color:var(--ink-soft)">{{pages.location.welcome_text}}</p>
+
+      <div class="info-block">
+        <h4>Cuisines</h4>
+        <div class="tags">
+          {{pages.location.cuisine_tags_html}}
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h4>Atmosphere</h4>
+        <div class="tags"><span class="tag">{{pages.location.atmosphere}}</span></div>
+      </div>
+
+      <div class="info-block">
+        <h4>Address</h4>
+        <a href="{{links.maps}}" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">{{contact.address_street}}, {{contact.address_city}}, {{contact.address_state}} {{contact.address_zip}}</a>
+      </div>
+
+      <div class="info-block">
+        <h4>Phone</h4>
+        <a href="tel:{{contact.phone_tel}}" style="color:var(--accent);font-weight:600">{{contact.phone_display}}</a>
+      </div>
+
+      <div class="info-block">
+        <h4>Business Hours</h4>
+        <table class="hours-table"><tr><td>{{hours.days_display}}</td><td>{{hours.display}}</td></tr></table>
+      </div>
+
+      <div class="info-block">
+        <h4>Carryout Hours</h4>
+        <table class="hours-table"><tr><td>{{hours.days_display}}</td><td>{{hours.carryout_display}}</td></tr></table>
+      </div>
+    </div>
+
+    <!-- Right: contact form -->
+    <div id="contact" data-screen-label="Contact form" data-reveal data-reveal-delay="120">
+      <p class="section-eyebrow">{{pages.location.contact_eyebrow}}</p>
+      <h2 style="font-size:30px">{{pages.location.contact_h2}}</h2>
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="{{site.web3forms_key}}">
+        <input type="hidden" name="subject" value="New contact-form message — {{restaurant.name}}">
+        <input type="hidden" name="from_name" value="{{restaurant.name}} Website">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div>
+          <label>Name <span class="req">*</span></label>
+          <input type="text" name="name" required>
+        </div>
+        <div>
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" required>
+        </div>
+        <div>
+          <label>Phone <span class="req">*</span></label>
+          <input type="tel" name="phone" required>
+        </div>
+        <div>
+          <label>Message <span class="req">*</span></label>
+          <textarea name="message" required></textarea>
+        </div>
+        <div class="h-captcha" data-captcha="true"></div>
+        <button class="btn" type="submit">Submit</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <iframe class="map-embed" title="{{restaurant.name}} map" loading="lazy" style="height:420px;margin-top:48px" data-reveal
+      src="{{links.maps_embed}}"></iframe>
+    <figure class="park-figure" data-reveal>
+      <img src="{{media.location_storefront_image}}" alt="{{restaurant.name}} storefront and parking guide" width="1774" height="887" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<script>
+(function () {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const status = document.getElementById('formStatus');
+  const btn = form.querySelector('button[type="submit"]');
+  const PHONE = '{{contact.phone_display}}';
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const cap = form.querySelector('textarea[name="h-captcha-response"]');
+    if (!cap || !cap.value) {
+      status.hidden = false;
+      status.className = 'form-status err';
+      status.textContent = 'Please complete the "I\'m human" check above, then click Submit.';
+      return;
+    }
+    const prevLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.hidden = false;
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success) {
+        status.className = 'form-status ok';
+        status.textContent = 'Thanks! Your message has been sent — we\'ll be in touch soon.';
+        form.reset();
+      } else {
+        status.className = 'form-status err';
+        status.textContent = (json && json.message) ? json.message : 'Sorry, something went wrong. Please call us at ' + PHONE + '.';
+      }
+    } catch (err) {
+      status.className = 'form-status err';
+      status.textContent = 'Network error — please try again, or call us at ' + PHONE + '.';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = prevLabel;
+    }
+  });
+})();
+</script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+{{> footer}}
+</body>
+</html>

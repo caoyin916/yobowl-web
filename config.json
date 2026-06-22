@@ -1,0 +1,126 @@
+{
+  "restaurant": {
+    "name": "Your Restaurant Name",
+    "name_short": "Your Restaurant",
+    "initials": "YR",
+    "tagline": "Authentic Chinese Cuisine",
+    "description": "Authentic Chinese cuisine in Anytown, TX — fresh ingredients, bold flavors, and a menu full of local favorites. Dine in or order online today!",
+    "description_plain": "Authentic Chinese cuisine in Anytown, TX. Fresh ingredients, bold flavors, and a menu full of local favorites.",
+    "footer_description": "Authentic Chinese cuisine — fresh ingredients, bold flavors, made to order.",
+    "cuisine_schema": "Chinese\", \"Asian\", \"Noodles",
+    "price_range": "$$",
+    "copyright_year": "2026",
+    "accepts_reservations": "False",
+    "has_catering": "True"
+  },
+  "contact": {
+    "phone_display": "(555) 555-5555",
+    "phone_e164": "+1-555-555-5555",
+    "phone_tel": "+15555555555",
+    "address_street": "123 Main St",
+    "address_street_display": "123 Main St",
+    "address_city": "Anytown",
+    "address_state": "TX",
+    "address_zip": "00000",
+    "address_country": "US",
+    "address_landmark": "",
+    "address_full": "123 Main St, Anytown, TX 00000",
+    "coordinates_lat": "0",
+    "coordinates_lng": "0"
+  },
+  "hours": {
+    "schema_opens": "11:00",
+    "schema_closes": "21:00",
+    "days_schema": "Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday",
+    "display": "Mon–Sun 11AM–9PM",
+    "days_display": "Mon – Sun",
+    "carryout_display": "Mon–Sun 11AM–9PM"
+  },
+  "site": {
+    "domain": "yourrestaurant.com",
+    "base_url": "https://www.yourrestaurant.com",
+    "web3forms_key": "REPLACE_WITH_YOUR_WEB3FORMS_KEY",
+    "google_review_url": "https://www.google.com/search?q=Your+Restaurant+Name"
+  },
+  "links": {
+    "order_online": "https://example.com/order",
+    "instagram": "",
+    "instagram_handle": "",
+    "maps": "https://www.google.com/maps/search/?api=1&query=123+Main+St+Anytown+TX+00000",
+    "maps_embed": "https://maps.google.com/maps?q=123+Main+St+Anytown+TX+00000&z=15&output=embed"
+  },
+  "media": {
+    "hero_bg": "branding-photo/hero-bg-placeholder.svg",
+    "logo": "branding-photo/logo-placeholder.svg",
+    "og_image": "branding-photo/og-image-placeholder.svg",
+    "ingredients_photo": "branding-photo/ingredients-placeholder.svg",
+    "menu_image_1": "menu-photo/menu-image-1-placeholder.svg",
+    "menu_image_2": "menu-photo/menu-image-2-placeholder.svg",
+    "catering_menu": "menu-photo/catering-menu-placeholder.svg",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap",
+    "instagram_photos": ["", "", "", "", "", ""],
+    "location_storefront_image": "location-photo/storefront-placeholder.svg"
+  },
+  "pages": {
+    "home": {
+      "hero_headline":       "Authentic Chinese <em>Comfort Food</em>",
+      "hero_sub":            "{{restaurant.name_short}}: The Most Authentic Chinese Cuisine in {{contact.address_city}}",
+      "ingredients_eyebrow": "Real Ingredients — Fresh &amp; Delicious",
+      "ingredients_h2":      "Quality you can taste in every bowl",
+      "ingredients_body":    "At {{restaurant.name_short}}, we are committed to providing our customers with quality Chinese cuisine made from only the freshest and most authentic ingredients. Our dedication to using real ingredients ensures that every dish bursts with flavor and nutrition — for a truly satisfying dining experience.",
+      "instagram_eyebrow":   "Follow Along",
+      "instagram_headline":  "Follow us on Instagram",
+      "reviews_eyebrow":     "Reviews",
+      "reviews_h2":          "See What Customers are Saying"
+    },
+    "menu": {
+      "subtitle":         "Our Menu",
+      "meta_description": "Browse the full {{restaurant.name}} menu. Order online for carryout.",
+      "og_description":   "Explore our full menu. Order online for carryout.",
+      "h1":               "Our Full Menu",
+      "tagline":          "Come hungry — here's everything we're serving up.",
+      "eyebrow":          "Come Hungry"
+    },
+    "gallery": {
+      "meta_description": "See photos of {{restaurant.name}}'s dishes. Authentic cuisine in {{contact.address_city}}, {{contact.address_state}}.",
+      "og_description":   "Photos of {{restaurant.name}} dishes.",
+      "eyebrow":          "Our Kitchen"
+    },
+    "location": {
+      "welcome_text": "Welcome to {{restaurant.name}}. We serve Chinese cuisine made from the freshest ingredients. We are located on {{contact.address_street}}. Order online for carryout today!",
+      "cuisine_tags": "Asian, Chinese, Noodles",
+      "atmosphere":   "Casual Dining",
+      "eyebrow":          "Find Us",
+      "tagline":          "Find us, call us, or send a message — we'd love to hear from you.",
+      "contact_eyebrow":  "Get In Touch",
+      "contact_h2":       "Contact Form"
+    },
+    "catering": {
+      "meta_description": "Let {{restaurant.name}} cater your next event. Call {{contact.phone_display}} to plan your order.",
+      "og_description":   "Authentic food for your event. Call {{contact.phone_display}} to plan your catering order.",
+      "h1":               "Let us cater your event!",
+      "offer_h2":         "What we offer"
+    }
+  },
+  "gallery_admin": {
+    "site_key": "restaurant",
+    "passcode":  "admin"
+  },
+  "reviews": [
+    { "stars": "★★★★★", "text": "Add your first review here.", "author": "— Customer Name" },
+    { "stars": "★★★★★", "text": "Add your second review here.", "author": "— Customer Name" },
+    { "stars": "★★★★★", "text": "Add your third review here.", "author": "— Customer Name" }
+  ],
+  "theme": {
+    "accent": "#be2f25",
+    "accent_dark": "#8c1c14",
+    "ember": "#e89033",
+    "gold": "#d6a437",
+    "chili_from": "#cf3622",
+    "cream": "#f8f2e8",
+    "cream_deep": "#f1e8d8",
+    "ink": "#211a15",
+    "font_head": "Montserrat",
+    "font_body": "Open Sans"
+  }
+}

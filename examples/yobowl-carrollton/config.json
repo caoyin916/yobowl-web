@@ -1,0 +1,145 @@
+{
+  "restaurant": {
+    "name": "Yo Bowl",
+    "name_short": "Yo Bowl",
+    "initials": "YB",
+    "tagline": "Build-Your-Own Mifen Noodle Bowls, Fast &amp; Fresh",
+    "description": "Asian fusion noodle shop in Carrollton, TX — build-your-own bowls of Taiwanese mifen rice noodles, soup or stir-fried, with your choice of protein, veggies, and chili oil. Dine in or order online today!",
+    "description_plain": "Asian fusion noodle shop in Carrollton, TX. Build-your-own bowls of Taiwanese mifen rice noodles, soup or stir-fried, with your choice of protein, veggies, and chili oil.",
+    "footer_description": "Fast, fresh, build-your-own mifen noodle bowls — Asian fusion made your way.",
+    "cuisine_schema": "Asian Fusion\", \"Chinese\", \"Noodles",
+    "price_range": "$",
+    "copyright_year": "2026",
+    "accepts_reservations": "False",
+    "has_catering": "True"
+  },
+  "contact": {
+    "phone_display": "(469) 892-6267",
+    "phone_e164": "+1-469-892-6267",
+    "phone_tel": "+14698926267",
+    "address_street": "2700 Old Denton Rd Unit 110",
+    "address_street_display": "2700 Old Denton Rd, Unit 110",
+    "address_city": "Carrollton",
+    "address_state": "TX",
+    "address_zip": "75007",
+    "address_country": "US",
+    "address_landmark": "Inside The View on Carrollton",
+    "address_full": "2700 Old Denton Rd Unit 110, Carrollton, TX 75007",
+    "coordinates_lat": "32.9898",
+    "coordinates_lng": "-96.9072"
+  },
+  "hours": {
+    "schema_opens": "11:00",
+    "schema_closes": "21:00",
+    "days_schema": "Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday",
+    "display": "Mon–Sun 11AM–9PM",
+    "days_display": "Mon – Sun",
+    "carryout_display": "Mon–Sun 11AM–8:30PM"
+  },
+  "site": {
+    "domain": "yobowlcarrollton.com",
+    "base_url": "https://www.yobowlcarrollton.com",
+    "web3forms_key": "REPLACE_WITH_YOUR_WEB3FORMS_KEY",
+    "google_review_url": "https://www.google.com/search?q=Yo+Bowl+Carrollton+TX"
+  },
+  "links": {
+    "order_online": "https://order.toasttab.com/online/yobowl",
+    "instagram": "https://www.instagram.com/yobowl.carrollton/",
+    "instagram_handle": "@yobowl.carrollton",
+    "maps": "https://www.google.com/maps/search/?api=1&query=2700+Old+Denton+Rd+Unit+110+Carrollton+TX+75007",
+    "maps_embed": "https://maps.google.com/maps?q=2700+Old+Denton+Rd+Unit+110+Carrollton+TX+75007&z=15&output=embed"
+  },
+  "media": {
+    "hero_bg": "branding-photo/yobowl-hero.png",
+    "logo": "branding-photo/yobowl-logo.png",
+    "og_image": "branding-photo/yobowl-hero.png",
+    "ingredients_photo": "gallery-photo/2.jpg",
+    "menu_image_1": "menu-photo/main-menu.webp",
+    "menu_image_2": "menu-photo/snacks-menu.webp",
+    "catering_menu": "menu-photo/main-menu.webp",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap",
+    "instagram_photos": [
+      "gallery-photo/1.jpg",
+      "gallery-photo/2.jpg",
+      "gallery-photo/3.jpg",
+      "gallery-photo/1.jpg",
+      "gallery-photo/2.jpg",
+      "gallery-photo/3.jpg"
+    ],
+    "location_storefront_image": "location-photo/where-to-park-storefront.png"
+  },
+  "pages": {
+    "home": {
+      "hero_headline": "Mifen Noodle Bowls, <em>Built Your Way</em>",
+      "hero_sub": "{{restaurant.name_short}}: Fast, Fresh Asian Fusion Noodle Bowls in {{contact.address_city}}",
+      "ingredients_eyebrow": "Real Ingredients — Fresh &amp; Delicious",
+      "ingredients_h2": "Cooked in 20 seconds, built to your taste",
+      "ingredients_body": "At {{restaurant.name_short}}, every bowl starts with springy Taiwanese mifen rice noodles, cooked fresh in just 20 seconds. Choose soup or dry, pick your protein — braised beef, sliced beef, shrimp, chicken, fish, or tofu — then load up on pickled veggies, chili oil, and a fried or quail egg for a bowl that's truly yours.",
+      "instagram_eyebrow": "Follow Along",
+      "instagram_headline": "Follow us on Instagram",
+      "reviews_eyebrow": "Reviews",
+      "reviews_h2": "See What Customers are Saying"
+    },
+    "menu": {
+      "subtitle": "Our Menu",
+      "meta_description": "Browse the full {{restaurant.name}} menu. Order online for carryout.",
+      "og_description": "Explore our full menu. Order online for carryout.",
+      "h1": "Our Full Menu",
+      "tagline": "Come hungry — here's everything we're serving up.",
+      "eyebrow": "Come Hungry"
+    },
+    "gallery": {
+      "meta_description": "See photos of {{restaurant.name}}'s dishes. Authentic cuisine in {{contact.address_city}}, {{contact.address_state}}.",
+      "og_description": "Photos of {{restaurant.name}} dishes.",
+      "eyebrow": "Our Kitchen"
+    },
+    "location": {
+      "welcome_text": "Welcome to {{restaurant.name}}. We build fast, fresh mifen noodle bowls from the freshest ingredients, your way. We are located on {{contact.address_street}}. Order online for carryout today!",
+      "cuisine_tags": "Asian Fusion, Chinese, Noodles, Mifen",
+      "atmosphere": "Casual, Fast-Casual",
+      "eyebrow": "Find Us",
+      "tagline": "Find us, call us, or send a message — we'd love to hear from you.",
+      "contact_eyebrow": "Get In Touch",
+      "contact_h2": "Contact Form"
+    },
+    "catering": {
+      "meta_description": "Let {{restaurant.name}} cater your next event. Call {{contact.phone_display}} to plan your order.",
+      "og_description": "Authentic food for your event. Call {{contact.phone_display}} to plan your catering order.",
+      "h1": "Let us cater your event!",
+      "offer_h2": "What we offer"
+    }
+  },
+  "gallery_admin": {
+    "site_key": "yobowl",
+    "passcode": "yobowl"
+  },
+  "reviews": [
+    {
+      "stars": "★★★★★",
+      "text": "The mifen noodles were silky and soaked up every bit of that delicious broth — easily one of the best soups I've ever had.",
+      "author": "— Customer review"
+    },
+    {
+      "stars": "★★★★★",
+      "text": "The stir-fried noodles had a good portion of meat and were cooked perfectly — add some of their chili oil and it takes it to the next level.",
+      "author": "— Customer review"
+    },
+    {
+      "stars": "★★★★★",
+      "text": "The quality of the noodles is 11/10, the broth delicious, and the braised beef had real depth and flavor.",
+      "author": "— Customer review"
+    }
+  ],
+  "theme": {
+    "accent": "#be2f25",
+    "accent_dark": "#8c1c14",
+    "ember": "#e89033",
+    "gold": "#d6a437",
+    "chili_from": "#cf3622",
+    "cream": "#f8f2e8",
+    "cream_deep": "#f1e8d8",
+    "ink": "#211a15",
+    "font_head": "Montserrat",
+    "font_body": "Open Sans"
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu | {{restaurant.name}} — {{pages.menu.subtitle}}</title>
+<meta name="description" content="{{pages.menu.meta_description}}">
+<link rel="canonical" href="{{site.base_url}}/Menu.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{restaurant.name}}">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="{{site.base_url}}/Menu.html">
+<meta property="og:title" content="Menu | {{restaurant.name}} — {{pages.menu.subtitle}}">
+<meta property="og:description" content="{{pages.menu.og_description}}">
+<meta property="og:image" content="{{media.menu_image_1}}">
+<meta property="og:image:alt" content="{{restaurant.name}} full menu">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Menu | {{restaurant.name}}">
+<meta name="twitter:description" content="{{pages.menu.og_description}}">
+<meta name="twitter:image" content="{{media.menu_image_1}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{media.google_fonts_url}}" rel="stylesheet">
+<script>document.documentElement.className += ' js';</script>
+<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="css/theme.css">
+
+<!-- ===== Structured data: Menu (Schema.org JSON-LD) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "@id": "{{site.base_url}}/#menu",
+  "name": "{{restaurant.name}} Menu",
+  "url": "{{site.base_url}}/Menu.html",
+  "inLanguage": "en-US"
+}
+</script>
+<style>
+  .menu-board { display: flex; flex-direction: column; gap: 32px; margin-top: 8px; }
+  .menu-board figure { margin: 0; }
+  .menu-board img {
+    display: block; width: 100%; height: auto;
+    border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--line);
+  }
+  .menu-board .menu-snacks { width: 50%; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+{{> nav}}
+
+<div class="page-head" data-screen-label="Menu page head">
+  <p class="section-eyebrow">{{pages.menu.eyebrow}}</p>
+  <h1>{{pages.menu.h1}}</h1>
+  <p>{{pages.menu.tagline}}</p>
+</div>
+
+<section data-screen-label="Menu">
+  <div class="wrap center">
+    <div class="menu-board">
+      <figure class="menu-main" data-reveal>
+        <img src="{{media.menu_image_1}}" alt="{{restaurant.name}} menu" fetchpriority="high" decoding="async">
+      </figure>
+      <figure class="menu-snacks" data-reveal>
+        <img src="{{media.menu_image_2}}" alt="{{restaurant.name}} menu" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <div class="center" style="margin-top:44px" data-reveal>
+      <a class="btn btn--lg" href="{{links.order_online}}" target="_blank" rel="noopener">Order Online</a>
+    </div>
+  </div>
+</section>
+
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Placeholder image — Storefront Photo">
+  <rect width="1200" height="800" fill="#f8f2e8"/>
+  <rect x="16" y="16" width="1168" height="768" fill="none" stroke="#be2f25" stroke-width="3" stroke-dasharray="14 10" rx="12"/>
+  <text x="50%" y="388.0" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" fill="#be2f25">Storefront Photo</text>
+  <text x="50%" y="436.0" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="22" fill="#1c1a17">Replace media.location_storefront_image in config.json</text>
+  <text x="50%" y="475.6" text-anchor="middle" font-family="Open Sans, Arial, sans-serif" font-size="16" fill="#8a7f72">location-photo/storefront-placeholder.svg</text>
+</svg>
