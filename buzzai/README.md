@@ -1,13 +1,13 @@
-# Buzz-AI landing page
+# Local Buzz Marketing landing page
 
-The marketing/sales site for **Buzz-AI** — the all-in-one platform (website +
-online ordering + AI social media + AI Google review management) sold to the
-restaurants whose sites are built from this repo.
+The marketing/sales site for **Local Buzz Marketing** — the all-in-one platform
+(website + online ordering + AI social media + AI Google review management)
+sold to the restaurants whose sites are built from this repo.
 
 This is a **standalone, single-page static site** — separate from the
 `build.py` / `config.json` / `sites/<slug>` pipeline (that pipeline is for
-per-restaurant client sites; Buzz-AI is the company's own site, so there's
-only one "config").
+per-restaurant client sites; this is the company's own marketing site, so
+there's only one "config").
 
 It reuses the shared design system and scripts from `../template/` (fonts,
 buttons, section/feature/review layouts, scroll-reveal animation, external
@@ -19,7 +19,7 @@ page-specific styles (`css/landing.css`).
 | Path | Purpose |
 |---|---|
 | `index.html` | The full landing page (header, hero, features, sample sites, FAQ, demo form, footer) |
-| `css/theme.css` | Buzz-AI brand palette (violet/amber) — overrides the "Chili Oil & Porcelain" tokens from `../template/css/styles.css` |
+| `css/theme.css` | Local Buzz Marketing brand palette (violet/amber) — overrides the "Chili Oil & Porcelain" tokens from `../template/css/styles.css` |
 | `css/landing.css` | Page-specific layout/styles (hero mockups, pillar grid, comparison table, FAQ accordion, etc.) |
 
 ## Running locally
@@ -38,11 +38,8 @@ python3 -m http.server 8099 --directory .
 
 - **Web3Forms key** — the demo-request form's `access_key` is still
   `REPLACE_WITH_YOUR_WEB3FORMS_KEY`. Generate a real key at web3forms.com.
-- **Contact placeholders** — `hello@buzzai.example` and `(555) 555-5555` are
-  placeholders; swap in real contact info.
-- **Sample Restaurant Sites** — the showcase links to live client sites
-  (Yo Bowl Carrollton, Jinsol Gukbap, Sichuan Pepper, Mom's Iron Wok). Update
-  this list as new restaurants launch.
+- **Sample Restaurant Sites** — currently showcases Yo Bowl (`yobowl.com`).
+  Update this list as new client sites launch.
 - **Deploying** — same static-hosting approach as the restaurant sites
   (e.g. Netlify). Since this page depends on `../template/`, either deploy
   from the repo root with `buzzai/` as the published subdirectory, or copy
