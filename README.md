@@ -236,4 +236,4 @@ CSS custom-property values that set the site's color palette:
 | `examples/` | Complete, filled-in example sites (real config + real photos) |
 | `onboarding/<slug>/` | Import-tool draft output (gitignored) — scratch space before promoting to `sites/<slug>/` |
 | `import_tool/` | Onboarding helper — drafts `config.json` from a restaurant's existing ordering page |
-| `buzzai/` | Buzz-AI company marketing/landing page (separate from the restaurant pipeline) |
+| `localbuzz/` | Local Buzz Marketing landing page (separate from the restaurant pipeline) |

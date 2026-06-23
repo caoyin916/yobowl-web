@@ -24,14 +24,14 @@ page-specific styles (`css/landing.css`).
 
 ## Running locally
 
-Must be served from the **repo root** (not from inside `buzzai/`), since
+Must be served from the **repo root** (not from inside `localbuzz/`), since
 `index.html` references `../template/css/styles.css`, `../template/js/reveal.js`,
 and `../template/js/external-links.js`:
 
 ```bash
 cd /Users/kedi/Documents/GitHub/yobowl-web
 python3 -m http.server 8099 --directory .
-# then open http://localhost:8099/buzzai/index.html
+# then open http://localhost:8099/localbuzz/index.html
 ```
 
 ## Before going live
@@ -42,7 +42,7 @@ python3 -m http.server 8099 --directory .
   Update this list as new client sites launch.
 - **Deploying** — same static-hosting approach as the restaurant sites
   (e.g. Netlify). Since this page depends on `../template/`, either deploy
-  from the repo root with `buzzai/` as the published subdirectory, or copy
+  from the repo root with `localbuzz/` as the published subdirectory, or copy
   the referenced `template/css/styles.css`, `template/js/reveal.js`, and
   `template/js/external-links.js` into this folder and update the paths
   before publishing as its own site.
