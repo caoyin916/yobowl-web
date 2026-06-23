@@ -24,15 +24,27 @@ page-specific styles (`css/landing.css`).
 
 ## Running locally
 
-Must be served from the **repo root** (not from inside `localbuzz/`), since
-`index.html` references `../template/css/styles.css`, `../template/js/reveal.js`,
-and `../template/js/external-links.js`:
-
 ```bash
-cd /Users/kedi/Documents/GitHub/yobowl-web
-python3 -m http.server 8099 --directory .
-# then open http://localhost:8099/localbuzz/index.html
+cd /Users/kedi/Documents/GitHub/yobowl-web/localbuzz
+python3 -m http.server 8099
+# then open http://localhost:8099
 ```
+
+## Deploying to Hostinger
+
+`localbuzz/` is self-contained — all CSS and JS live inside this folder,
+no `../template/` references. The workflow:
+
+1. Connect this GitHub repo to Hostinger (hPanel → Git)
+2. In hPanel, set the **document root** for `localbuzz-marketing.com` to
+   `public_html/localbuzz` (the subfolder within the deployed repo)
+3. Push any changes to GitHub — Hostinger auto-pulls
+
+**If you update `template/css/styles.css` or the shared JS files**, run:
+```bash
+python3 build_localbuzz.py
+```
+Then commit and push the updated files in `localbuzz/css/` and `localbuzz/js/`.
 
 ## Before going live
 
@@ -40,9 +52,3 @@ python3 -m http.server 8099 --directory .
   `REPLACE_WITH_YOUR_WEB3FORMS_KEY`. Generate a real key at web3forms.com.
 - **Sample Restaurant Sites** — currently showcases Yo Bowl (`yobowl.com`).
   Update this list as new client sites launch.
-- **Deploying** — same static-hosting approach as the restaurant sites
-  (e.g. Netlify). Since this page depends on `../template/`, either deploy
-  from the repo root with `localbuzz/` as the published subdirectory, or copy
-  the referenced `template/css/styles.css`, `template/js/reveal.js`, and
-  `template/js/external-links.js` into this folder and update the paths
-  before publishing as its own site.
